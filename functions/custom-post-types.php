@@ -234,6 +234,123 @@ function create_event_tag_taxonomy()
 }
 add_action('init', 'create_event_tag_taxonomy');
 
+// ニュース カスタム投稿タイプ
+function create_news_post_type()
+{
+    $labels = array(
+        'name'               => 'ニュース',
+        'singular_name'      => 'ニュース',
+        'menu_name'          => 'ニュース',
+        'add_new'            => '新規追加',
+        'add_new_item'       => '新しいニュースを追加',
+        'edit_item'          => 'ニュースを編集',
+        'new_item'           => '新しいニュース',
+        'view_item'          => 'ニュースを表示',
+        'view_items'         => 'ニュースを表示',
+        'search_items'       => 'ニュースを検索',
+        'not_found'          => 'ニュースが見つかりません',
+        'not_found_in_trash' => 'ゴミ箱にニュースが見つかりません',
+        'all_items'          => 'すべてのニュース',
+        'archives'           => 'ニュースアーカイブ',
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => true,
+        'show_in_admin_bar'  => true,
+        'show_in_rest'       => true, // Gutenberg対応
+        'query_var'          => true,
+        'rewrite'            => array(
+            'slug' => 'news',
+            'with_front' => false,
+            'pages' => true,
+            'feeds' => true,
+        ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 8,
+        'menu_icon'          => 'dashicons-megaphone',
+        'supports'           => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields'),
+        'taxonomies'         => array('news_category', 'news_tag'),
+    );
+
+    register_post_type('news', $args);
+}
+add_action('init', 'create_news_post_type');
+
+// ニュースカテゴリー タクソノミー
+function create_news_category_taxonomy()
+{
+    $labels = array(
+        'name'              => 'ニュースカテゴリー',
+        'singular_name'     => 'ニュースカテゴリー',
+        'search_items'      => 'カテゴリーを検索',
+        'all_items'         => 'すべてのカテゴリー',
+        'parent_item'       => '親カテゴリー',
+        'parent_item_colon' => '親カテゴリー:',
+        'edit_item'         => 'カテゴリーを編集',
+        'update_item'       => 'カテゴリーを更新',
+        'add_new_item'      => '新しいカテゴリーを追加',
+        'new_item_name'     => '新しいカテゴリー名',
+        'menu_name'         => 'カテゴリー',
+    );
+
+    $args = array(
+        'labels'            => $labels,
+        'hierarchical'      => true,
+        'public'            => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true,
+        'show_tagcloud'     => true,
+        'show_in_rest'      => true, // Gutenberg対応
+        'rewrite'           => array('slug' => 'news-category'),
+    );
+
+    register_taxonomy('news_category', array('news'), $args);
+}
+add_action('init', 'create_news_category_taxonomy');
+
+// ニュースタグ タクソノミー
+function create_news_tag_taxonomy()
+{
+    $labels = array(
+        'name'                       => 'ニュースタグ',
+        'singular_name'              => 'ニュースタグ',
+        'search_items'               => 'タグを検索',
+        'popular_items'              => 'よく使われるタグ',
+        'all_items'                  => 'すべてのタグ',
+        'edit_item'                  => 'タグを編集',
+        'update_item'                => 'タグを更新',
+        'add_new_item'               => '新しいタグを追加',
+        'new_item_name'              => '新しいタグ名',
+        'separate_items_with_commas' => 'タグをカンマで区切る',
+        'add_or_remove_items'        => 'タグを追加または削除',
+        'choose_from_most_used'      => 'よく使われるタグから選択',
+        'menu_name'                  => 'タグ',
+    );
+
+    $args = array(
+        'labels'            => $labels,
+        'hierarchical'      => false, // タグは階層なし
+        'public'            => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true,
+        'show_tagcloud'     => true,
+        'show_in_rest'      => true, // Gutenberg対応
+        'rewrite'           => array('slug' => 'news-tag'),
+    );
+
+    register_taxonomy('news_tag', array('news'), $args);
+}
+add_action('init', 'create_news_tag_taxonomy');
+
 // カスタムリライトルールの追加
 function add_custom_rewrite_rules()
 {
