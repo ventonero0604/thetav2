@@ -9,48 +9,37 @@ get_header(); ?>
   <div class="header">
     <h1 class="title">NEWS</h1>
   </div>
-  <div class="content">
-    <?php if (have_posts()) : ?>
-      <?php while (have_posts()) : the_post(); ?>
-        <article class="news-card">
-          <a href="<?php the_permalink(); ?>">
-            <?php if (has_post_thumbnail()) : ?>
-              <div class="news-card__thumb"><?php the_post_thumbnail('medium'); ?></div>
-            <?php endif; ?>
-            <div class="news-card__body">
-              <h2 class="news-card__title"><?php the_title(); ?></h2>
-              <div class="news-card__meta">
-                <time datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
-                <?php $cats = get_the_terms(get_the_ID(), 'news_category');
-                if ($cats && !is_wp_error($cats)) {
-                  foreach ($cats as $cat) {
-                    echo '<span class="news-card__cat">' . esc_html($cat->name) . '</span>';
-                  }
-                } ?>
-              </div>
-              <div class="news-card__excerpt"><?php the_excerpt(); ?></div>
-            </div>
-          </a>
-        </article>
-      <?php endwhile; ?>
-      <div class="pagenation">
-        <?php
-        global $wp_query;
-        $big = 999999999;
-        echo paginate_links(array(
-          'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-          'format' => '/page/%#%/',
-          'current' => max(1, get_query_var('paged')),
-          'total' => $wp_query->max_num_pages,
-          'prev_text' => '＜',
-          'next_text' => '＞',
-        ));
-        ?>
-      </div>
-    <?php else : ?>
-      <p>ニュースがありません。</p>
-    <?php endif; ?>
-  </div>
+  <?php get_template_part("template-parts/news-list"); ?>
+
+  <?php
+  global $wp_query;
+  $paged = get_query_var("paged") ? get_query_var("paged") : 1;
+  $max_pages = $wp_query->max_num_pages;
+
+  if ($max_pages > 1):
+
+    $base_url = get_post_type_archive_link("news");
+    $pagination_base = user_trailingslashit(trailingslashit($base_url) . "page/%#%");
+    ?>
+    <div class="pagenation">
+      <?php if ($paged > 1): ?>
+        <?php $prev_url = $paged == 2 ? $base_url : str_replace("%#%", $paged - 1, $pagination_base); ?>
+        <a href="<?php echo esc_url($prev_url); ?>">＜</a>
+      <?php endif; ?>
+      <?php for ($i = 1; $i <= $max_pages; $i++) {
+        $class = $i === $paged ? "current" : "";
+        $page_url = $i == 1 ? $base_url : str_replace("%#%", $i, $pagination_base);
+        echo '<a href="' . esc_url($page_url) . '" class="' . esc_attr($class) . '">' . intval($i) . "</a>";
+      } ?>
+      <?php if ($paged < $max_pages): ?>
+        <?php $next_url = str_replace("%#%", $paged + 1, $pagination_base); ?>
+        <a href="<?php echo esc_url($next_url); ?>">＞</a>
+      <?php endif; ?>
+    </div>
+  <?php
+  endif;
+  ?>
+
 </main>
 
 <?php get_footer(); ?>

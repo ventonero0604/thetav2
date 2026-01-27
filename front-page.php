@@ -214,22 +214,22 @@
     </div>
     </main>
 
-    <sectoin class="StaticContents">
+    <section class="StaticContents">
       <div class="StaticContents_content">
-        <h2 class="StaticContents_title">THETA PEOPLE</h2>
+        <h2 class="StaticContents_title">MAGAZINE</h2>
         <div class="columns">
           <?php
-          $args = array(
-            'post_type' => 'column',
-            'posts_per_page' => 3,
-            'orderby' => 'date',
-            'order' => 'DESC',
-          );
+          $args = [
+            "post_type" => "column",
+            "posts_per_page" => 3,
+            "orderby" => "date",
+            "order" => "DESC",
+          ];
           $query = new WP_Query($args);
           if ($query->have_posts()) {
             while ($query->have_posts()) {
               $query->the_post();
-              get_template_part('template-parts/column-card');
+              get_template_part("template-parts/column-card");
             }
           }
           wp_reset_postdata();
@@ -237,10 +237,74 @@
 
         </div>
         <div class="button c-btn-round --arrow u-uppercase">
-          <a class="box-shadow" href="<?php echo esc_url(get_post_type_archive_link('column')); ?>" style="box-shadow: rgba(255, 255, 255, 0.75) 0.191184rem -0.488952rem 0.1875rem, rgba(168, 168, 168, 0.24) -0.191184rem 0.488952rem 0.3125rem, rgba(255, 255, 255, 0.16) -0.0637278rem 0.162984rem 0.1875rem inset;"></a>
+          <a class="box-shadow" href="<?php echo esc_url(
+            get_post_type_archive_link("column"),
+          ); ?>" style="box-shadow: rgba(255, 255, 255, 0.75) 0.191184rem -0.488952rem 0.1875rem, rgba(168, 168, 168, 0.24) -0.191184rem 0.488952rem 0.3125rem, rgba(255, 255, 255, 0.16) -0.0637278rem 0.162984rem 0.1875rem inset;"></a>
         </div>
       </div>
-    </sectoin>
+    </section>
+
+    <section class="StaticContents">
+      <div class="StaticContents_content">
+        <h2 class="StaticContents_title">EVENT</h2>
+        <div class="events">
+          <?php
+          $args = [
+            "post_type" => "event",
+            "posts_per_page" => 4,
+            "orderby" => "date",
+            "order" => "DESC",
+          ];
+          $query = new WP_Query($args);
+          if ($query->have_posts()) {
+            while ($query->have_posts()) {
+              $query->the_post();
+              get_template_part("template-parts/event-card");
+            }
+          }
+          wp_reset_postdata();
+          ?>
+
+        </div>
+        <div class="button c-btn-round --arrow u-uppercase">
+          <a class="box-shadow" href="<?php echo esc_url(
+            get_post_type_archive_link("event"),
+          ); ?>" style="box-shadow: rgba(255, 255, 255, 0.75) 0.191184rem -0.488952rem 0.1875rem, rgba(168, 168, 168, 0.24) -0.191184rem 0.488952rem 0.3125rem, rgba(255, 255, 255, 0.16) -0.0637278rem 0.162984rem 0.1875rem inset;"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="StaticContents">
+      <div class="StaticContents_content">
+        <h2 class="StaticContents_title">NEWS</h2>
+        <div class="list">
+        <?php
+        $args = [
+          "post_type" => "news",
+          "posts_per_page" => 3,
+          "orderby" => "date",
+          "order" => "DESC",
+        ];
+        // クエリを上書きしてリストテンプレートを利用
+        global $wp_query;
+        $temp_query = $wp_query; // 元のクエリを退避
+        $wp_query = new WP_Query($args);
+
+        if ($wp_query->have_posts()) {
+          get_template_part("template-parts/news-list");
+        }
+
+        $wp_query = $temp_query; // 元のクエリに戻す
+        wp_reset_postdata();
+        ?>
+        </div>
+        <div class="button c-btn-round --arrow u-uppercase">
+          <a class="box-shadow" href="<?php echo esc_url(
+            get_post_type_archive_link("news"),
+          ); ?>" style="box-shadow: rgba(255, 255, 255, 0.75) 0.191184rem -0.488952rem 0.1875rem, rgba(168, 168, 168, 0.24) -0.191184rem 0.488952rem 0.3125rem, rgba(255, 255, 255, 0.16) -0.0637278rem 0.162984rem 0.1875rem inset;"></a>
+        </div>
+      </div>
+    </section>
 
     <!--//banner-->
     <?php get_footer(); ?>

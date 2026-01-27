@@ -6,6 +6,8 @@
     "sass:watch": "sass --watch assets/scss:assets/css"
   },
   "devDependencies": {
+    "@prettier/plugin-php": "^0.24.0",
+    "prettier": "^3.8.1",
     "sass": "^1.69.0"
   }
 }

@@ -3,36 +3,30 @@
 /**
  * Template Name: ニュース詳細
  */
-?><?php get_header(); ?>
+get_header(); ?>
 
 <main class="NewsDetail">
   <div class="content">
     <div class="header">
       <div class="tags">
         <?php
-        $tags = get_the_terms(get_the_ID(), 'news_tag');
+        $tags = get_the_terms(get_the_ID(), "news_tag");
         if ($tags && !is_wp_error($tags)) {
           foreach ($tags as $tag) {
-            echo '<span>#' . esc_html($tag->name) . '</span> ';
+            echo "<span>#" . esc_html($tag->name) . "</span> ";
           }
         }
         ?>
       </div>
 
-      <?php if ($news_image = get_field('image')) { ?>
-        <div class="image">
-          <img src="<?php echo esc_url($news_image); ?>" alt="" />
-        </div>
-      <?php } ?>
-
-      <h1 class="title">
-        <?php echo esc_html(get_field('brand')); ?>
-      </h1>
-
       <p class="date">
-        <span><?php echo esc_html(get_field('year')); ?>.</span><?php echo esc_html(get_field('date_start')); ?> – <?php echo esc_html(get_field('date_end')); ?>
+        <?php echo get_the_date("Y.m.d"); ?>
       </p>
 
+
+      <h1 class="title">
+        <?php the_title(); ?>
+      </h1>
     </div>
 
     <div class="body">
@@ -44,8 +38,8 @@
     $next_post = get_next_post();
     ?>
     <ul class="pageNation">
-      <li class="<?php echo empty($prev_post) ? 'disabled' : ''; ?>">
-        <a href="<?php echo !empty($prev_post) ? get_permalink($prev_post->ID) : '#'; ?>">
+      <li class="<?php echo empty($prev_post) ? "disabled" : ""; ?>">
+        <a href="<?php echo !empty($prev_post) ? get_permalink($prev_post->ID) : "#"; ?>">
           ←　PREV
         </a>
       </li>
@@ -54,8 +48,8 @@
           ALL
         </a>
       </li>
-      <li class="<?php echo empty($next_post) ? 'disabled' : ''; ?>">
-        <a href="<?php echo !empty($next_post) ? get_permalink($next_post->ID) : '#'; ?>">
+      <li class="<?php echo empty($next_post) ? "disabled" : ""; ?>">
+        <a href="<?php echo !empty($next_post) ? get_permalink($next_post->ID) : "#"; ?>">
           NEXT　→
         </a>
       </li>

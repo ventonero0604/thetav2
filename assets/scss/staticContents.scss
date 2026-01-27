@@ -8,6 +8,12 @@
     width: 100%;
   }
 
+  & + & {
+    @media screen and (max-width: 699px) {
+      margin-top: -5rem;
+    }
+  }
+
   &_content {
     display: grid;
     gap: 2rem;
@@ -64,6 +70,25 @@
       @media screen and (max-width: 699px) {
         font-size: 0.8rem;
       }
+    }
+  }
+
+  .events {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    @media screen and (max-width: 699px) {
+      grid-template-columns: 1fr;
+      padding-left: 3.2307692308rem;
+      padding-right: 3.2307692308rem;
+      gap: 1.5rem;
+    }
+  }
+
+  .list {
+    @media screen and (max-width: 699px) {
+      padding-left: 3.2307692308rem;
+      padding-right: 3.2307692308rem;
     }
   }
 
