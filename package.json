@@ -1,0 +1,11 @@
+{
+  "name": "custom-template",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "sass assets/scss:assets/css",
+    "sass:watch": "sass --watch assets/scss:assets/css"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}

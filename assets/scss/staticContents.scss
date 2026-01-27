@@ -1,0 +1,76 @@
+.StaticContents {
+  margin: 10rem auto;
+  display: grid;
+  gap: 10rem;
+  width: 112rem;
+
+  @media screen and (max-width: 699px) {
+    width: 100%;
+  }
+
+  &_content {
+    display: grid;
+    gap: 2rem;
+  }
+
+  &_title {
+    font-size: 8.75rem;
+    color: #ffffff;
+    letter-spacing: 0.152em;
+    text-align: center;
+    font-weight: 100;
+    font-family: "Oswald", sans-serif;
+    white-space: nowrap;
+
+    @media screen and (max-width: 699px) {
+      font-size: 3.6153846154rem;
+      margin-bottom: 1.1538461538rem;
+    }
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    @media screen and (max-width: 699px) {
+      padding-left: 3.2307692308rem;
+      padding-right: 3.2307692308rem;
+    }
+
+    @media screen and (max-width: 699px) {
+      grid-template-columns: 1fr;
+    }
+
+    .Column_card {
+      width: unset;
+    }
+    .Column_card_date {
+      display: none;
+    }
+    .Column_card_tag {
+      font-size: 1rem;
+      @media screen and (max-width: 699px) {
+        font-size: 0.7rem;
+      }
+    }
+    .Column_card_name {
+      font-size: 1.6rem;
+      @media screen and (max-width: 699px) {
+        font-size: 1.2rem;
+      }
+    }
+    .Column_card_title {
+      font-size: 1.2rem;
+      @media screen and (max-width: 699px) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .button {
+    margin-top: 3rem;
+    @media screen and (max-width: 699px) {
+      margin-top: 1rem;
+    }
+  }
+}
