@@ -6,7 +6,7 @@ $latest_date_end = isset($latest_date_end) ? $latest_date_end : get_field("date_
 $latest_brand = isset($latest_brand) ? $latest_brand : get_field("brand");
 $latest_tags = isset($latest_tags) ? $latest_tags : get_the_terms(get_the_ID(), "event_tag");
 ?>
-<article class="Event_card">
+<article class="EventCard">
   <a href="<?php echo esc_url(get_permalink()); ?>" class="EventCard_item">
     <?php if ($latest_image) { ?>
       <div class="EventCard_image">

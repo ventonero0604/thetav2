@@ -53,24 +53,6 @@
     .Column_card_date {
       display: none;
     }
-    .Column_card_tag {
-      font-size: 1rem;
-      @media screen and (max-width: 699px) {
-        font-size: 0.7rem;
-      }
-    }
-    .Column_card_name {
-      font-size: 1.6rem;
-      @media screen and (max-width: 699px) {
-        font-size: 1.2rem;
-      }
-    }
-    .Column_card_title {
-      font-size: 1.2rem;
-      @media screen and (max-width: 699px) {
-        font-size: 0.8rem;
-      }
-    }
   }
 
   .events {

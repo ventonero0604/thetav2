@@ -517,25 +517,28 @@
 }
 @media screen and (max-width: 699px) {
   .Column_card_info {
-    padding: 1rem 2rem;
+    padding: 1rem;
   }
 }
 .Column_card_date {
-  font-size: 1.2rem;
+  font-size: 1rem;
   position: absolute;
-  top: 2rem;
+  top: 1.8rem;
   right: 2rem;
   font-weight: 400;
+  line-height: 1;
 }
 @media screen and (max-width: 699px) {
   .Column_card_date {
     font-size: 0.6rem;
     top: 1rem;
+    right: 1rem;
   }
 }
 .Column_card_tag {
   font-size: 1rem;
   font-weight: 400;
+  line-height: 1;
   color: white;
 }
 @media screen and (max-width: 699px) {
@@ -543,20 +546,23 @@
     font-size: 0.7rem;
   }
 }
-.Column_card_name {
-  font-size: 1.6rem;
-}
-@media screen and (max-width: 699px) {
-  .Column_card_name {
-    font-size: 1.6rem;
-  }
-}
 .Column_card_title {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: 0.8rem 0;
 }
 @media screen and (max-width: 699px) {
   .Column_card_title {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+  }
+}
+.Column_card_name {
+  font-size: 1rem;
+  line-height: 1;
+}
+@media screen and (max-width: 699px) {
+  .Column_card_name {
+    font-size: 0.7rem;
   }
 }
 

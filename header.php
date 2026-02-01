@@ -33,8 +33,21 @@
             <div class="l-header-nav__overlay"></div>
             <div class="l-header-nav__inner">
               <ul class="l-header-nav__list">
-                <li class="l-header-nav__item"><a class="l-header-nav__link" href="<?php echo esc_url(home_url('')); ?>" target="" rel="">home</a></li>
-                <li class="l-header-nav__item"><a class="l-header-nav__link" href="<?php echo esc_url(home_url('products')); ?>" target="" rel="">Products</a></li>
+                <li class="l-header-nav__item"><a class="l-header-nav__link" href="<?php echo esc_url(
+                  home_url(""),
+                ); ?>" target="" rel="">home</a></li>
+                <li class="l-header-nav__item"><a class="l-header-nav__link" href="<?php echo esc_url(
+                  home_url("products"),
+                ); ?>" target="" rel="">Products</a></li>
+                <li class="l-header-nav__item"><a class="l-header-nav__link" href="<?php echo esc_url(
+                  home_url("column"),
+                ); ?>" target="" rel="">Magazine</a></li>
+                <li class="l-header-nav__item"><a class="l-header-nav__link" href="<?php echo esc_url(
+                  home_url("event"),
+                ); ?>" target="" rel="">Events</a></li>
+                <li class="l-header-nav__item"><a class="l-header-nav__link" href="<?php echo esc_url(
+                  home_url("news"),
+                ); ?>" target="" rel="">News</a></li>
               </ul>
             </div>
           </nav>
