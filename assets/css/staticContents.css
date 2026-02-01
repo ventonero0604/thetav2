@@ -55,30 +55,6 @@
 .StaticContents .columns .Column_card_date {
   display: none;
 }
-.StaticContents .columns .Column_card_tag {
-  font-size: 1rem;
-}
-@media screen and (max-width: 699px) {
-  .StaticContents .columns .Column_card_tag {
-    font-size: 0.7rem;
-  }
-}
-.StaticContents .columns .Column_card_name {
-  font-size: 1.6rem;
-}
-@media screen and (max-width: 699px) {
-  .StaticContents .columns .Column_card_name {
-    font-size: 1.2rem;
-  }
-}
-.StaticContents .columns .Column_card_title {
-  font-size: 1.2rem;
-}
-@media screen and (max-width: 699px) {
-  .StaticContents .columns .Column_card_title {
-    font-size: 0.8rem;
-  }
-}
 .StaticContents .events {
   display: grid;
   grid-template-columns: 1fr 1fr;

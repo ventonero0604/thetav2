@@ -46,6 +46,9 @@
         <ul class="l-footer__nav-list">
           <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="/"> Home</a></li>
           <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="/products"> Products</a></li>
+          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="/column"> Magazine</a></li>
+          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="/event"> Events</a></li>
+          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="/news"> News</a></li>
         </ul>
         <ul class="l-footer__nav-sublist">
           <li class="l-footer__nav-subitem"><a href="https://www.instagram.com/_theta_official/" target="_blank" rel="noopener noreferrer">Instagram</a></li>

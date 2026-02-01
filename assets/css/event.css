@@ -75,7 +75,7 @@
   }
 }
 .EventDetail .body {
-  font-size: 2.1rem;
+  font-size: 1.6rem;
   display: grid;
   gap: 4rem;
   margin-top: 6rem;
@@ -169,6 +169,12 @@
   gap: 4rem;
   max-width: 155rem;
   margin: 3rem auto 0;
+}
+@media screen and (max-width: 699px) {
+  .EventArchive .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 .EventArchive .pagenation {
   display: flex;
