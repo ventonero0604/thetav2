@@ -510,10 +510,11 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  background: rgba(155, 155, 155, 0.54);
+  background: rgb(155, 155, 155);
   color: white;
   width: 100%;
   padding: 2rem;
+  opacity: 0.8;
 }
 @media screen and (max-width: 699px) {
   .Column_card_info {
