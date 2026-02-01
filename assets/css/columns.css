@@ -1,5 +1,40 @@
-.ScrollSmoother-wrapper {
-  z-index: -1;
+.post-type-archive-column.body,
+.single-column.body,
+.post-type-archive-post.body,
+.single-post.body,
+.tax-column_tag.body,
+.home.body {
+  height: auto !important;
+  min-height: 100vh !important;
+}
+.post-type-archive-column .ScrollSmoother-wrapper,
+.single-column .ScrollSmoother-wrapper,
+.post-type-archive-post .ScrollSmoother-wrapper,
+.single-post .ScrollSmoother-wrapper,
+.tax-column_tag .ScrollSmoother-wrapper,
+.home .ScrollSmoother-wrapper {
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+.post-type-archive-column .ScrollSmoother-wrapper .l-header,
+.post-type-archive-column .ScrollSmoother-wrapper .ColumnArchive,
+.post-type-archive-column .ScrollSmoother-wrapper .ColumnDetail,
+.single-column .ScrollSmoother-wrapper .l-header,
+.single-column .ScrollSmoother-wrapper .ColumnArchive,
+.single-column .ScrollSmoother-wrapper .ColumnDetail,
+.post-type-archive-post .ScrollSmoother-wrapper .l-header,
+.post-type-archive-post .ScrollSmoother-wrapper .ColumnArchive,
+.post-type-archive-post .ScrollSmoother-wrapper .ColumnDetail,
+.single-post .ScrollSmoother-wrapper .l-header,
+.single-post .ScrollSmoother-wrapper .ColumnArchive,
+.single-post .ScrollSmoother-wrapper .ColumnDetail,
+.tax-column_tag .ScrollSmoother-wrapper .l-header,
+.tax-column_tag .ScrollSmoother-wrapper .ColumnArchive,
+.tax-column_tag .ScrollSmoother-wrapper .ColumnDetail,
+.home .ScrollSmoother-wrapper .l-header,
+.home .ScrollSmoother-wrapper .ColumnArchive,
+.home .ScrollSmoother-wrapper .ColumnDetail {
+  pointer-events: auto !important;
 }
 
 .ColumnDetail {

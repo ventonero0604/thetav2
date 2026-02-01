@@ -1,5 +1,25 @@
-.ScrollSmoother-wrapper {
-  z-index: -1;
+// コラム・通常の投稿ページ・トップページに限定して適用
+.post-type-archive-column,
+.single-column,
+.post-type-archive-post,
+.single-post,
+.tax-column_tag,
+.home {
+  &.body {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  .ScrollSmoother-wrapper {
+    z-index: 1 !important;
+    pointer-events: none !important;
+
+    .l-header,
+    .ColumnArchive,
+    .ColumnDetail {
+      pointer-events: auto !important;
+    }
+  }
 }
 
 .ColumnDetail {

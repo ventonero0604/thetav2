@@ -47,23 +47,35 @@ function add_files()
     is_post_type_archive("post") ||
     is_post_type_archive("column") ||
     is_home() ||
+    is_front_page() || // フロントページ対応
     get_query_var("post_type") === "column" || // ページネーション対応
     is_tax("column_tag"); // コラムタグアーカイブ対応
 
   // イベント詳細・一覧ページでのみ event.css を読み込む
   $should_load_event_css =
-    is_singular("event") || is_post_type_archive("event") || get_query_var("post_type") === "event"; // ページネーション対応
+    is_singular("event") ||
+    is_post_type_archive("event") ||
+    is_front_page() || // フロントページ対応
+    get_query_var("post_type") === "event"; // ページネーション対応
 
-  // ニュース詳細・一覧ページでのみ news.css を読み込むjkjk
-  $should_load_news_css = is_singular("news") || is_post_type_archive("news") || get_query_var("post_type") === "news";
+  // ニュース詳細・一覧ページでのみ news.css を読み込む
+  $should_load_news_css =
+    is_singular("news") ||
+    is_post_type_archive("news") ||
+    is_front_page() || // フロントページ対応
+    get_query_var("post_type") === "news";
 
   if ($should_load_columns_css) {
     wp_css("columns-css", "/assets/css/columns.css");
   }
 
-  wp_css("event-css", "/assets/css/event.css");
+  if ($should_load_event_css) {
+    wp_css("event-css", "/assets/css/event.css");
+  }
 
-  wp_css("news-css", "/assets/css/news.css");
+  if ($should_load_news_css) {
+    wp_css("news-css", "/assets/css/news.css");
+  }
 
   $translation_array = [
     "templateUrl" => get_stylesheet_directory_uri(),

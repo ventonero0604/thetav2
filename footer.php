@@ -7,7 +7,7 @@
 <footer class="l-footer">
   <div class="l-footer__top">
     <div class="l-footer__logos">
-      <p class="l-footer__logo-main"> <a class="l-footer__logo-link" href="/">
+      <p class="l-footer__logo-main"> <a class="l-footer__logo-link" href="<?php echo esc_url(home_url("/")); ?>">
           <picture>
             <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo-theta-black.svg" type="image/svg+xml" /><img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo-theta-black.svg" alt="The Stage Theta" width="214" height="77" />
           </picture>
@@ -44,11 +44,21 @@
     <div class="l-footer__bottom-right">
       <nav class="l-footer__nav">
         <ul class="l-footer__nav-list">
-          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="/"> Home</a></li>
-          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="/products"> Products</a></li>
-          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="/column"> Magazine</a></li>
-          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="/event"> Events</a></li>
-          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="/news"> News</a></li>
+          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="<?php echo esc_url(
+            home_url("/"),
+          ); ?>"> Home</a></li>
+          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="<?php echo esc_url(
+            home_url("/products"),
+          ); ?>"> Products</a></li>
+          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="<?php echo esc_url(
+            home_url("/column"),
+          ); ?>"> Magazine</a></li>
+          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="<?php echo esc_url(
+            home_url("/event"),
+          ); ?>"> Events</a></li>
+          <li class="l-footer__nav-item"><a class="l-footer__nav-link" href="<?php echo esc_url(
+            home_url("/news"),
+          ); ?>"> News</a></li>
         </ul>
         <ul class="l-footer__nav-sublist">
           <li class="l-footer__nav-subitem"><a href="https://www.instagram.com/_theta_official/" target="_blank" rel="noopener noreferrer">Instagram</a></li>

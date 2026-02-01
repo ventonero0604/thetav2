@@ -1,5 +1,25 @@
-.ScrollSmoother-wrapper {
-  z-index: -1;
+.post-type-archive-event.body,
+.single-event.body,
+.home.body {
+  height: auto !important;
+  min-height: 100vh !important;
+}
+.post-type-archive-event .ScrollSmoother-wrapper,
+.single-event .ScrollSmoother-wrapper,
+.home .ScrollSmoother-wrapper {
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+.post-type-archive-event .ScrollSmoother-wrapper .l-header,
+.post-type-archive-event .ScrollSmoother-wrapper .EventArchive,
+.post-type-archive-event .ScrollSmoother-wrapper .EventDetail,
+.single-event .ScrollSmoother-wrapper .l-header,
+.single-event .ScrollSmoother-wrapper .EventArchive,
+.single-event .ScrollSmoother-wrapper .EventDetail,
+.home .ScrollSmoother-wrapper .l-header,
+.home .ScrollSmoother-wrapper .EventArchive,
+.home .ScrollSmoother-wrapper .EventDetail {
+  pointer-events: auto !important;
 }
 
 .EventDetail {

@@ -90,7 +90,9 @@
             <div class="p-top-products-list__item">
               <div class="p-top-products-list__info">
                 <h3 class="p-top-products-list__ttl wf-oswald" style="font-size: 8vw;">2P/Suvin<br>Cotton<br>Tee</h3>
-                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="/products/suvin-cotton-tee" aria-label="Read More"></a></div>
+                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="<?php echo esc_url(
+                  home_url("/products/suvin-cotton-tee"),
+                ); ?>" aria-label="Read More"></a></div>
                 <div class="p-top-products-list__image --img1" data-para-depth="-0.5">
                   <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/img-prod-1.webp" type="image/webp" />
@@ -108,7 +110,9 @@
             <div class="p-top-products-list__item">
               <div class="p-top-products-list__info">
                 <h3 class="p-top-products-list__ttl wf-oswald" style="font-size: 8vw;">Boxy<br>Tee/M</h3>
-                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="/products/boxy-tee-m" aria-label="Read More"></a></div>
+                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="<?php echo esc_url(
+                  home_url("/products/boxy-tee-m"),
+                ); ?>" aria-label="Read More"></a></div>
                 <div class="p-top-products-list__image --img2" data-para-depth="-0.5">
                   <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/img-prod-2.webp" type="image/webp" />
@@ -126,7 +130,9 @@
             <div class="p-top-products-list__item">
               <div class="p-top-products-list__info">
                 <h3 class="p-top-products-list__ttl wf-oswald" style="font-size: 8vw;">Boxy<br>Tee/W</h3>
-                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="/products/boxy-tee-w" aria-label="Read More"></a></div>
+                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="<?php echo esc_url(
+                  home_url("/products/boxy-tee-w"),
+                ); ?>" aria-label="Read More"></a></div>
                 <div class="p-top-products-list__image --img3" data-para-depth="-0.5">
                   <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/img-prod-3.webp" type="image/webp" />
@@ -144,7 +150,9 @@
             <div class="p-top-products-list__item">
               <div class="p-top-products-list__info">
                 <h3 class="p-top-products-list__ttl wf-oswald" style="font-size: 8vw;">Zip-up<br>Hoodie</h3>
-                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="/products/zip-up-hoodie" aria-label="Read More"></a></div>
+                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="<?php echo esc_url(
+                  home_url("/products/zip-up-hoodie"),
+                ); ?>" aria-label="Read More"></a></div>
                 <div class="p-top-products-list__image --img4" data-para-depth="-0.5">
                   <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/img-prod-4.webp" type="image/webp" />
@@ -162,7 +170,9 @@
             <div class="p-top-products-list__item">
               <div class="p-top-products-list__info">
                 <h3 class="p-top-products-list__ttl wf-oswald" style="font-size: 8vw;">Jogger<br>Pants</h3>
-                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="/products/jogger-pants" aria-label="Read More"></a></div>
+                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="<?php echo esc_url(
+                  home_url("/products/jogger-pants"),
+                ); ?>" aria-label="Read More"></a></div>
                 <div class="p-top-products-list__image --img5" data-para-depth="-0.5">
                   <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/img-prod-5.webp" type="image/webp" />

@@ -1,5 +1,22 @@
-.ScrollSmoother-wrapper {
-  z-index: -1;
+// イベントページ・トップページに限定して適用
+.post-type-archive-event,
+.single-event,
+.home {
+  &.body {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  .ScrollSmoother-wrapper {
+    z-index: 1 !important;
+    pointer-events: none !important;
+
+    .l-header,
+    .EventArchive,
+    .EventDetail {
+      pointer-events: auto !important;
+    }
+  }
 }
 
 .EventDetail {

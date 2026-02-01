@@ -1,5 +1,22 @@
-.ScrollSmoother-wrapper {
-  z-index: -1;
+// ニュースページ・トップページに限定して適用
+.post-type-archive-news,
+.single-news,
+.home {
+  &.body {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  .ScrollSmoother-wrapper {
+    z-index: 1 !important;
+    pointer-events: none !important;
+
+    .l-header,
+    .NewsArchive,
+    .NewsDetail {
+      pointer-events: auto !important;
+    }
+  }
 }
 
 .NewsDetail {
