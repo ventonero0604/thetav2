@@ -35,6 +35,7 @@
 .home .ScrollSmoother-wrapper .ColumnArchive,
 .home .ScrollSmoother-wrapper .ColumnDetail {
   pointer-events: auto !important;
+  transform: none !important;
 }
 
 .ColumnDetail {

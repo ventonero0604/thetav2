@@ -20,6 +20,7 @@
 .home .ScrollSmoother-wrapper .EventArchive,
 .home .ScrollSmoother-wrapper .EventDetail {
   pointer-events: auto !important;
+  transform: none !important;
 }
 
 .EventDetail {

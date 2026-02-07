@@ -15,6 +15,7 @@
     .EventArchive,
     .EventDetail {
       pointer-events: auto !important;
+      transform: none !important;
     }
   }
 }

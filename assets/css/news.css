@@ -21,6 +21,7 @@
 .home .ScrollSmoother-wrapper .NewsArchive,
 .home .ScrollSmoother-wrapper .NewsDetail {
   pointer-events: auto !important;
+  transform: none !important;
 }
 
 .NewsDetail {

@@ -1,15 +1,16 @@
 <?php
 // カスタム投稿タイプのアーカイブページの場合は適切なテンプレートを読み込む
-if (is_post_type_archive('column') || (get_query_var('post_type') === 'column')) {
-    echo '<!-- DEBUG: Redirecting to archive-column.php from index.php -->';
-    echo '<!-- DEBUG: post_type query var: ' . get_query_var('post_type') . ' -->';
-    echo '<!-- DEBUG: paged query var: ' . get_query_var('paged') . ' -->';
+if (is_post_type_archive("column") || get_query_var("post_type") === "column") {
+  echo "<!-- DEBUG: Redirecting to archive-column.php from index.php -->";
+  echo "<!-- DEBUG: post_type query var: " . get_query_var("post_type") . " -->";
+  echo "<!-- DEBUG: paged query var: " . get_query_var("paged") . " -->";
 
-    include(get_template_directory() . '/archive-column.php');
-    return;
+  include get_template_directory() . "/archive-column.php";
+  return;
 }
 
-get_header(); ?><a class="p-top-bnr" href="https://theta-online.jp/theta_tgc/" target="_blank" rel="noopener noreferrer">
+get_header();
+?><a class="p-top-bnr" href="https://theta-online.jp/theta_tgc/" target="_blank" rel="noopener noreferrer">
   <picture>
     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/bnr/bnr-251126.webp" type="image/webp" />
     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/bnr/bnr-251126.png" type="image/png" /><img src="<?php echo get_template_directory_uri(); ?>/assets/img/bnr/bnr-251126.png" alt="ヒロマツホールディングスTGC　THETA DEBUT" width="580" height="640" loading="lazy" />
@@ -101,7 +102,9 @@ get_header(); ?><a class="p-top-bnr" href="https://theta-online.jp/theta_tgc/" t
             <div class="p-top-products-list__item">
               <div class="p-top-products-list__info">
                 <h3 class="p-top-products-list__ttl wf-oswald filter-shadow u-uppercase">2P/Suvin<br>Cotton<br>Tee</h3>
-                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="/products/suvin-cotton-tee" aria-label="Read More"></a></div>
+                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="<?php echo esc_url(
+                  home_url("/products/suvin-cotton-tee"),
+                ); ?>" aria-label="Read More"></a></div>
                 <div class="p-top-products-list__image --img1" data-para-depth="-0.5">
                   <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/img-prod-1.webp" type="image/webp" />
@@ -119,7 +122,9 @@ get_header(); ?><a class="p-top-bnr" href="https://theta-online.jp/theta_tgc/" t
             <div class="p-top-products-list__item">
               <div class="p-top-products-list__info">
                 <h3 class="p-top-products-list__ttl wf-oswald filter-shadow u-uppercase">Boxy<br>Tee/M</h3>
-                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="/products/boxy-tee-m" aria-label="Read More"></a></div>
+                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="<?php echo esc_url(
+                  home_url("/products/boxy-tee-m"),
+                ); ?>" aria-label="Read More"></a></div>
                 <div class="p-top-products-list__image --img2" data-para-depth="-0.5">
                   <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/img-prod-2.webp" type="image/webp" />
@@ -137,7 +142,9 @@ get_header(); ?><a class="p-top-bnr" href="https://theta-online.jp/theta_tgc/" t
             <div class="p-top-products-list__item">
               <div class="p-top-products-list__info">
                 <h3 class="p-top-products-list__ttl wf-oswald filter-shadow u-uppercase">Boxy<br>Tee/W</h3>
-                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="/products/boxy-tee-w" aria-label="Read More"></a></div>
+                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="<?php echo esc_url(
+                  home_url("/products/boxy-tee-w"),
+                ); ?>" aria-label="Read More"></a></div>
                 <div class="p-top-products-list__image --img3" data-para-depth="-0.5">
                   <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/img-prod-3.webp" type="image/webp" />
@@ -155,7 +162,9 @@ get_header(); ?><a class="p-top-bnr" href="https://theta-online.jp/theta_tgc/" t
             <div class="p-top-products-list__item">
               <div class="p-top-products-list__info">
                 <h3 class="p-top-products-list__ttl wf-oswald filter-shadow u-uppercase">Zip-up<br>Hoodie</h3>
-                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="/products/zip-up-hoodie" aria-label="Read More"></a></div>
+                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="<?php echo esc_url(
+                  home_url("/products/zip-up-hoodie"),
+                ); ?>" aria-label="Read More"></a></div>
                 <div class="p-top-products-list__image --img4" data-para-depth="-0.5">
                   <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/img-prod-4.webp" type="image/webp" />
@@ -173,7 +182,9 @@ get_header(); ?><a class="p-top-bnr" href="https://theta-online.jp/theta_tgc/" t
             <div class="p-top-products-list__item">
               <div class="p-top-products-list__info">
                 <h3 class="p-top-products-list__ttl wf-oswald filter-shadow u-uppercase">Jogger<br>Pants</h3>
-                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="/products/jogger-pants" aria-label="Read More"></a></div>
+                <div class="c-btn-round u-uppercase --arrow --left"><a class="box-shadow" href="<?php echo esc_url(
+                  home_url("/products/jogger-pants"),
+                ); ?>" aria-label="Read More"></a></div>
                 <div class="p-top-products-list__image --img5" data-para-depth="-0.5">
                   <picture>
                     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/img-prod-5.webp" type="image/webp" />
